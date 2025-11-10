@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juan - Abogado Penal</title>
+    <style>
+        :root {
+            --dark: #0c111a;
+            --mid: #162033;
+            --accent: #d4a94e;
+            --light: #f2f2f7;
+            --white: #ffffff;
+            --bg-gradient: linear-gradient(135deg, #101a2a, #1d2b45);
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: var(--light);
+            color: #111;
+        }
+
+        header {
+            background: var(--bg-gradient);
+            color: var(--white);
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header img {
+            height: 45px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        nav a {
+            color: var(--white);
+            margin-left: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .hero {
+            background: url('images/hero.jpg') center/cover no-repeat;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.45);
+            background-blend-mode: darken;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            background: var(--accent);
+            padding: 12px 28px;
+            border-radius: 6px;
+            color: #111;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            opacity: 0.85;
+        }
+
+        /* SECTION STYLING */
+        section {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .about {
+            display: flex;
+            gap: 30px;
+            padding: 70px 8%;
+            align-items: center;
+            background: var(--white);
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+
+        .about img {
+            width: 320px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        #servicios {
+            padding: 70px 8%;
+            background: var(--bg-gradient);
+            color: white;
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+
+        .services {
+            display: flex;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .service {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 25px;
+            border-radius: 12px;
+            backdrop-filter: blur(6px);
+            transition: 0.3s;
+        }
+
+        .service:hover {
+            transform: translateY(-6px);
+            background: rgba(255, 255, 255, 0.16);
+        }
+
+        .contact {
+            padding: 70px 8%;
+            background: var(--white);
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input,
+        textarea {
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #bbb;
+            font-size: 1rem;
+        }
+
+        button {
+            padding: 12px;
+            background: var(--mid);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: var(--dark);
+        }
+
+        footer {
+            text-align: center;
+            background: var(--bg-gradient);
+            color: white;
+            padding: 20px;
+            margin-top: 40px;
+            border-radius: 16px 16px 0 0;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width: 900px) {
+            .about {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .services {
+                flex-direction: column;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-area">
+            <img src="images/logo.png" alt="Logo abogacía" />
+            <span>Juan · Abogado Penal</span>
+        </div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+    <section class="hero" id="inicio">
+        <div class="hero-text">
+            <h1>Defensa Penal de Excelencia</h1>
+            <p>Compromiso, estrategia y profesionalidad.</p>
+            <a href="#contacto" class="btn">Consulta gratuita</a>
+        </div>
+    </section>
+    <section class="about" id="sobre-mi">
+        <img src="images/juan.jpg" alt="Juan abogado penal">
+        <div>
+            <h2>Sobre mí</h2>
+            <p>Abogado penalista con amplia experiencia en casos complejos, delitos económicos y defensa legal de
+                urgencia.
+                Trabajo con máxima dedicación, confidencialidad y estrategia.</p>
+        </div>
+    </section>
+    <section id="servicios">
+        <h2>Servicios</h2>
+        <div class="services">
+            <div class="service">
+                <h3>Defensa Penal</h3>
+                <p>Representación en juicios, detenciones y recursos.</p>
+            </div>
+            <div class="service">
+                <h3>Delitos Económicos</h3>
+                <p>Fraudes, estafas, blanqueo y responsabilidad penal.</p>
+            </div>
+            <div class="service">
+                <h3>Compliance Penal</h3>
+                <p>Prevención de delitos en empresas mediante protocolos internos.</p>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contacto">
+        <h2>Contacto</h2>
+        <form
+            action="https://docs.google.com/forms/d/e/1FAIpQLSffxrqFcmrTQYsB1c3kXXes0vwZ6w_OpXr71YziyKouPMMldQ/formResponse"
+            method="POST" target="_blank" novalidate>
+            <input type="text" name="entry.2005620554" placeholder="Nombre completo" required>
+            <input type="email" name="entry.1045781291" placeholder="Correo electrónico" required>
+            <input type="tel" name="entry.1166974658" placeholder="Teléfono">
+            <textarea name="entry.839337160" placeholder="Describe tu caso" rows="5"></textarea>
+            <button type="submit">Enviar mensaje</button>
+        </form>
+    </section>
+    <footer>
+        <p>© 2025 Juan - Abogado Penal. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        // Intersection Observer para animaciones
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+            });
+        }, { threshold: 0.2 });
+        sections.forEach(sec => observer.observe(sec));
+    </script>
+</body>
+
+</html>
